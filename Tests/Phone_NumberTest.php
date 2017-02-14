@@ -4,6 +4,17 @@ namespace Challenge;
 
 require '../Phone_Number.php';
 
+/**
+ * Class Phone_NumberTest
+ *
+ * A class extending PHPUnit Framework for code coverage
+ *
+ *
+ * @package Challenge
+ * @author Nafas Sait <nafassait@gmail.com>
+ * @see https://github.com/nafassait/codechallenge/
+ *
+ */
 class Phone_NumberTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -16,7 +27,6 @@ class Phone_NumberTest extends \PHPUnit_Framework_TestCase
 
     public function testFormat($originalString, $expectedResult)
     {
-        //$inputFile = $this->getMock('Phone_Number', array('format'), array("8018640759"));
         $phoneNumber = new Phone_Number($originalString);
         $this->assertEquals($phoneNumber->format(), $expectedResult);
     }

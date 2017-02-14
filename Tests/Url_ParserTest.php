@@ -4,6 +4,17 @@ namespace Challenge;
 
 require '../Url_Parser.php';
 
+/**
+ * Class Url_ParserTest
+ *
+ * A class extending PHPUnit Framework for code coverage
+ *
+ *
+ * @package Challenge
+ * @author Nafas Sait <nafassait@gmail.com>
+ * @see https://github.com/nafassait/codechallenge/
+ *
+ */
 class Url_ParserTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -28,15 +39,15 @@ class Url_ParserTest extends \PHPUnit_Framework_TestCase
      */
     public function testRetrieveQueryParams($originalString, $expectedResult)
     {
-        $this->Url_Parser ->retrieveQueryParams($originalString);
+        $this->Url_Parser->retrieveQueryParams($originalString);
         $this->assertEquals($this->Url_Parser->retrieveQueryParams($originalString), $expectedResult);
     }
 
     public function providerTestRetrieveQueryParams()
     {
         return array(
-            array("www.example.com/cat/sub?queryhash=1&asd=2", array("queryhash" => 1,"asd"=>2)),
-            array("www.example.com?queryhash=asdf&asd=qrs", array("queryhash" => "asdf","asd"=>"qrs"))
+            array("www.example.com/cat/sub?queryhash=1&asd=2", array("queryhash" => 1, "asd" => 2)),
+            array("www.example.com?queryhash=asdf&asd=qrs", array("queryhash" => "asdf", "asd" => "qrs"))
         );
     }
 
@@ -48,18 +59,18 @@ class Url_ParserTest extends \PHPUnit_Framework_TestCase
      */
     public function testMergeUrlParams($url1, $url2, $expectedResult)
     {
-        $result = $this->Url_Parser ->mergeUrlParams($url1, $url2);
+        $result = $this->Url_Parser->mergeUrlParams($url1, $url2);
         $this->assertEquals($result, $expectedResult);
     }
 
     public function providerTestMergeUrlParams()
     {
         return array(
-            array('www.example.com/cat/sub?myqueryhash=1&asd=2','www.google.com/subcategory?myqueryhash2=12&asd2=22',
-                array("myqueryhash" => 1,"asd"=>2, "myqueryhash2"=> 12, "asd2"=>22)
+            array('www.example.com/cat/sub?myqueryhash=1&asd=2', 'www.google.com/subcategory?myqueryhash2=12&asd2=22',
+                array("myqueryhash" => 1, "asd" => 2, "myqueryhash2" => 12, "asd2" => 22)
             ),
-            array('www.example.com?queryhash=asdf&asd=qrs','www.google.com/subcategory?myqueryhash2=12&asd2=22',
-                array("queryhash" => "asdf","asd"=>"qrs", "myqueryhash2"=> 12, "asd2"=>22)
+            array('www.example.com?queryhash=asdf&asd=qrs', 'www.google.com/subcategory?myqueryhash2=12&asd2=22',
+                array("queryhash" => "asdf", "asd" => "qrs", "myqueryhash2" => 12, "asd2" => 22)
             )
         );
     }

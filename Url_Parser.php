@@ -22,12 +22,13 @@ class Url_Parser
 {
     public function mergeUrlParams($url1, $url2)
     {
-        return array_merge($this->retrieveQueryParams ($url1), $this->retrieveQueryParams($url2));
+        return array_merge($this->retrieveQueryParams($url1), $this->retrieveQueryParams($url2));
     }
 
-    public function retrieveQueryParams ($url) {
+    public function retrieveQueryParams($url)
+    {
         //retrieve the url query component and turn the url's query string into an array
-        parse_str(parse_url($url, PHP_URL_QUERY),$query_string_array);
+        parse_str(parse_url($url, PHP_URL_QUERY), $query_string_array);
         return $query_string_array;
     }
 }
