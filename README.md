@@ -1,5 +1,3 @@
-# codechallenge
-
 # PHP Code Challenge
 
 ### Requirements
