@@ -18,16 +18,6 @@ require '../Phone_Number_Util.php';
 class Phone_Number_Util_Test extends \PHPUnit_Framework_TestCase
 {
 
-    protected function setUp()
-    {
-
-    }
-
-    protected function tearDown()
-    {
-
-    }
-
     /**
      * @param string $originalString String to be formatted
      * @param string $expectedResult What we expect our result to be
