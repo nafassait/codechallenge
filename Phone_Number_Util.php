@@ -19,7 +19,7 @@ namespace Challenge;
  * @see https://github.com/nafassait/codechallenge/
  *
  */
-class Phone_Number
+class Phone_Number_Util
 {
 
     /**
@@ -39,7 +39,7 @@ class Phone_Number
 
     /**
      * A function to format the phoneNumber for the phone number and returns
-     * Complex validations are not part of this function
+     * Complex extended validations are not part of this function
      *
      * @return mixed|string formatted phone number
      * @access public
@@ -52,9 +52,9 @@ class Phone_Number
             $nextThree = substr($this->phoneNumber, 3, 3);
             $lastFour = substr($this->phoneNumber, 6, 4);
 
-            $this->phoneNumber = $firstThree . '-' . $nextThree . '-' . $lastFour;
+            return $firstThree . '-' . $nextThree . '-' . $lastFour;
         }
 
-        return $this->phoneNumber;
+        return false;
     }
 }
